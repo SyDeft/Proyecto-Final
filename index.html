@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajo Final HTML y CSS</title>
+    <!--Importamos CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Colocamos un favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--Importamos libreria de Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!--Importamos Poppins Font Family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <!--Cabecera de la pagina web-->
+    <header class="header">
+        <a href="#" class="header__logo">Salvador</a>
+        <!--Hacemos que el icono sea clickeable sin JS-->        
+        <input type="checkbox" name="checkbox" id="header__menu__toggle">
+        <label for="header__menu__toggle" class="header__menu__icon__action">
+          <div class="ri-menu-fill" id="header__menu__icon"></div>
+        </label>
+        <!--Lista del header-->
+        <ul class="header__navlist">
+            <li><a href="#" class="header__inicio"></a>Inicio</a></li>
+            <li><a href="#" class="header__aboutme"></a>Sobre mi</a></li>
+            <li><a href="#" class="header__portfolio"></a>Portfolio</a></li>
+            <li><a href="#" class="header__contact"></a>Contacto</a></li>
+        </ul>
+    </header>
+    <!--Hero Section-->
+    <section class="hero">
+      <div class="hero__text">
+        <h2 class="hero__title">¡Hola! Me llamo Salvador y soy estudiante de <span>programación</span></h2>
+        <p class="hero__text__p">Tengo 20 años y soy un apasionado por la programación y el desarrollo web</p>
+      <div class="hero__icon__links">
+        <a href="#" class="hero__download__icon"><i class="ri-download-2-line"></i>Descarga mi CV</a>
+        <a href="#" class="hero__github__icon"><i class="ri-github-fill"></i>GitHub</a>
+      </div>
+      </div>
+      <div>
+        <img src="assets/images/main_image.png"class="hero_image" alt="coffeboy">
+      </div>
+    </section>
+    <!--Iconos-->
+    <div class="icons">
+      <a href="#"><i class="ri-whatsapp-line"></i></a>
+      <a href="#"><i class="ri-instagram-line"></i></a>
+    </div>
+    <div class="scrolldown">
+      <a href=""><i class="ri-arrow-down-line"></i></a>
+    </div>
+  </body>
+</html>

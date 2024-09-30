@@ -1,0 +1,336 @@
+/*Configuraciones generales*/
+* {
+  font-family: "Poppins", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Mantiene el ancho y alto apesar de los bordes y el padding*/
+  list-style: none; /*Quita la decoración de la lista y su estilo*/
+  text-decoration: none; /*Quita la decoración de la lista*/
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+}
+
+header {
+  position: fixed; /*Utilizamos position fixed para que quede fijado cuando usemos scroll*/
+  right: 0;
+  top: 0;
+  z-index: 1; /*Usamos z-index 1 para que quede siempre encima de otros elementos*/
+  width: 100%; /*Colocamos un ancho del 100%*/
+  display: flex; /*Se usa flex para que tanto la etiqueta a como la lista se posicionen en linea*/
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header a {
+  color: aliceblue;
+}
+
+.header__logo {
+  font-size: 25px;
+  font-weight: 700;
+  border-bottom: 3px solid aliceblue;
+}
+
+.header__navlist {
+  display: flex; /*Elementos de la lista en linea*/
+}
+
+.header__navlist a {
+  margin-left: 50px; /*Separamos las palabras*/
+}
+/*animaciones nav*/
+.header__navlist li{
+  transition: transform 250ms, opacity 400ms;
+  cursor: pointer;
+}
+.header__navlist li:hover{
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+/*Este apartado es para que el header se adapte a otras resoluciones mas chicas como las de telefonos. En este caso usamos display none para que no se vea en el escritorio el icono*/
+
+#header__menu__icon {
+  display: none; /* Está en none solo para que se vea cuando la pagina este colapsada*/
+  font-size: 25px;
+  z-index: 2; /*Para que este sobre el header*/
+  cursor: pointer; /*para que al poner el raton encima se vea la manito*/
+}
+
+#header__menu__toggle {
+  display: none;
+}
+
+#header__menu__icon__action {
+  display: none;
+}
+/*Empieza la configuracion del hero o main*/
+section{
+  padding: 0 15%;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(82deg, rgba(0,0,0,1) 39%, rgba(131,126,213,1) 72%);
+  position: relative; /*Para que sus hijos se muevan de forma relativa al hero*/
+  display: grid; /*Para que el hero se divida en columnas*/
+  grid-template-columns: 1fr 1fr; /*Dividimos el section hero en 2 columnas*/
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero__title{
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero__title span{
+  color: #837ed5;
+}
+.hero__text__p {
+  font-size: 20px;
+}
+
+.hero__icon__links{
+  margin-top: 20px;
+  display: flex;
+}
+.hero__download__icon{
+  font-size: 15px;
+  border: 1px solid aliceblue;
+  border-radius: 15px;
+  padding: 7px;
+  color: #837ed5;
+  transition: transform 250ms, opacity 400ms;
+}
+.hero__download__icon:hover{
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.hero__github__icon{
+  font-size: 15px;
+  border: 1px solid aliceblue;
+  border-radius: 15px;
+  padding: 7px;
+  margin-left: 10px;
+  color: #837ed5;
+  transition: transform 250ms, opacity 400ms;
+}
+
+.hero__github__icon:hover{
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/*icons*/
+
+.icons{
+  position: absolute;
+  top: 90vh;
+  padding: 0 2%;
+}
+
+.icons i{
+  display: inline-flex;
+  margin-right: 40px;
+  font-size: 30px;
+  transition: transform 250ms, opacity 400ms;
+  color: #837ed5;
+}
+
+.icons i:hover{
+  transform: scale(1.10);
+  opacity: 0.8;
+}
+
+/*Flecha para bajar*/
+
+.scrolldown{
+  position: absolute;
+  bottom: 5%;
+  right: 1%;
+}
+
+.scrolldown i{
+  display: block;
+  font-size: 40px;
+  color: aliceblue;
+}
+
+/*Mediaqueries para que sea responsivo*/
+
+@media (max-width: 1450px){
+  .hero__title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .hero__text__p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1300px){
+  .hero__title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .hero__text__p {
+    font-size: 10px;
+  }
+
+  .hero__download__icon{
+    font-size: 10px;
+    border: 1px solid aliceblue;
+    border-radius: 15px;
+    padding: 7px;
+    color: #837ed5;
+    transition: transform 250ms, opacity 400ms;
+  }
+  .hero_image{
+    height: 400px;
+  }
+  .hero__github__icon{
+    font-size: 10px;
+    border: 1px solid aliceblue;
+    border-radius: 15px;
+    padding: 7px;
+    margin-left: 10px;
+    color: #837ed5;
+    transition: transform 250ms, opacity 400ms;
+  }
+}
+
+@media (max-width: 1200px){
+  .hero__title{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .hero__text__p {
+    font-size: 8px;
+  }
+
+  .hero__download__icon{
+    font-size: 7px;
+    border: 1px solid aliceblue;
+    border-radius: 15px;
+    padding: 7px;
+    color: #837ed5;
+    transition: transform 250ms, opacity 400ms;
+  }
+  
+  .hero__github__icon{
+    font-size: 7px;
+    border: 1px solid aliceblue;
+    border-radius: 15px;
+    padding: 7px;
+    margin-left: 10px;
+    color: #837ed5;
+    transition: transform 250ms, opacity 400ms;
+  }
+
+
+  .header__logo {
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 3px solid aliceblue;
+  }
+
+  .header__navlist li{
+    transition: transform 250ms, opacity 400ms;
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  .icons i{
+    display: inline-flex;
+    margin-right: 40px;
+    font-size: 20px;
+    transition: transform 250ms, opacity 400ms;
+    color: #837ed5;
+  }
+
+  .hero_image{
+    height: 300px;
+  }
+
+  .scrolldown i{
+    display: block;
+    font-size: 20px;
+    color: aliceblue;
+  }
+
+}
+
+@media (max-width: 992px){
+  section{
+    padding: 0 3%;
+  }
+  
+  .hero_image{
+    height: 300px;
+
+  }
+
+  .scrolldown{
+    display: none;
+  }
+}
+
+@media (max-width: 768px){
+  .header__menu__icon__action{
+    display: block;
+  }
+  #header__menu__toggle:checked + label.header__menu__icon__action + ul{
+    right: 0;
+  }
+  #header__menu__icon{
+    display: block;
+  }
+  .header__navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: #6b67b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+  .header__navlist a{
+    display: block;
+    margin: 7px 0;
+  }
+  .hero__text{
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero_image{
+    margin: 0;
+  }
+
+  .hero{
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__icon__links{
+    justify-content: center;
+  }
+
+
+}
